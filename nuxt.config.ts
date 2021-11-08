@@ -18,23 +18,52 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/logger.ts'],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
+    // PHPStorm support
+    ['nuxt-storm', { nested: true }],
     '@nuxt/typescript-build',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    //'~/modules/simple/js/module.js',
+    //'~/modules/simple/src/module.ts',
+    '~/modules/nuxt-graphql-middleware/src/module.ts',
+    //'~/plugins/simple',
+  ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['vue-property-decorator'],
+  },
 
   bridge: {
-    vite: false,
+    vite: true,
+  },
+  graphqlMiddleware: {
+    // Example: https://studio.apollographql.com/sandbox/explorer
+    graphqlServer: `https://swapi-graphql.netlify.app/.netlify/functions/index`,
+    queries: {
+      film: '~/pages/film/film.graphql',
+      filmList: '~/pages/list/filmlist.graphql',
+    },
+    plugin: {
+      enabled: true,
+      port: 4000,
+      cacheInServer: false,
+      cacheInBrowser: true,
+    },
+    debug: true,
+    outputPath: './graphql_queries',
+    typescript: {
+      enabled: true,
+      skipSchemaDownload: process.env.NODE_ENV === 'production',
+      schemaOutputPath: './schema',
+    },
   },
 }
