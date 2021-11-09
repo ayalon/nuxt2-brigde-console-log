@@ -34,7 +34,7 @@ export default {
   modules: [
     //'~/modules/simple/js/module.js',
     //'~/modules/simple/src/module.ts',
-    '~/modules/nuxt-graphql-middleware/src/module.ts',
+    //'~/modules/nuxt-graphql-middleware/src/module.ts',
     //'~/plugins/simple',
     'nuxt-graphql-middleware',
   ],
