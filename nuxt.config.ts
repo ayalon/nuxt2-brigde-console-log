@@ -36,11 +36,12 @@ export default {
     //'~/modules/simple/src/module.ts',
     '~/modules/nuxt-graphql-middleware/src/module.ts',
     //'~/plugins/simple',
+    'nuxt-graphql-middleware',
   ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    transpile: ['vue-property-decorator'],
-  },
+  // build: {
+  //   transpile: ['vue-property-decorator'],
+  // },
 
   bridge: {
     vite: true,
