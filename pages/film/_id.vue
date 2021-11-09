@@ -22,7 +22,7 @@ import { FilmByIdQuery, FilmFragment } from '~/types/graphql-operations'
   },
   head(this: Film) {
     return {
-      title: this.film.title,
+      title: this.film.title || '',
     }
   },
 })
