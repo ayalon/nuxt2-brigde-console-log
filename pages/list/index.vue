@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>List of Films</h1>
+    <Title title="List of Films"></Title>
     <ul>
       <li v-for="film in films" :key="film.id">
         <nuxt-link :to="'film/' + film.id">{{ film.title }}</nuxt-link>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ film.title }}</h1>
+    <Title :title="film.title"></Title>
     <p>Director: {{ film.director }}</p>
     <nuxt-link to="/list">To the list</nuxt-link>
   </div>
