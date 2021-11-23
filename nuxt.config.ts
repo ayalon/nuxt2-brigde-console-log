@@ -1,4 +1,6 @@
-export default {
+import type { NuxtConfig } from '@nuxt/types'
+
+const config: NuxtConfig = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt2',
@@ -32,11 +34,11 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    //'~/modules/simple/js/module.js',
-    //'~/modules/simple/src/module.ts',
-    //'~/modules/nuxt-graphql-middleware/src/module.ts',
-    //'~/plugins/simple',
-    'nuxt-graphql-middleware',
+    // '~/modules/simple/js/module.js',
+    // '~/modules/simple/src/module.ts',
+    // '~/modules/nuxt-graphql-middleware/src/module.ts',
+    // '~/plugins/simple',
+    '~/modules/nuxt-graphql-middleware',
   ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   // build: {
@@ -53,9 +55,9 @@ export default {
       film: '~/pages/film/film.graphql',
       filmList: '~/pages/list/filmlist.graphql',
     },
+    mutations: {},
     plugin: {
       enabled: true,
-      port: 4000,
       cacheInServer: false,
       cacheInBrowser: true,
     },
@@ -63,8 +65,13 @@ export default {
     outputPath: './graphql_queries',
     typescript: {
       enabled: true,
-      skipSchemaDownload: process.env.NODE_ENV === 'production',
+      resolvedQueriesPath: '~/graphql_queries',
       schemaOutputPath: './schema',
+      typesOutputPath: '~/types',
+      schemaOptions: {},
+      skipSchemaDownload: process.env.NODE_ENV === 'production',
     },
   },
 }
+
+export default config

@@ -19,5 +19,12 @@
     },
     "types": ["@types/node", "@nuxt/types", "nuxt-graphql-middleware"]
   },
-  "exclude": ["node_modules", ".nuxt", "dist", "modules/simple", "backup"]
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist",
+    "modules/simple",
+    "modules/nuxt-graphql-middleware",
+    "backup"
+  ]
 }

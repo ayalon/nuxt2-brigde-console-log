@@ -89,3 +89,4 @@ sw.*
 # Vim swap files
 *.swp
 /modules/simple/
+/graphql_queries/
