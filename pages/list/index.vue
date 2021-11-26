@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { AllFilmsQuery } from '~/types/graphql-operations'
+import { AllFilmsQuery, FilmListFragment } from '~/types/graphql-operations'
 
 @Component({
   asyncData({ app }) {
@@ -27,6 +27,6 @@ import { AllFilmsQuery } from '~/types/graphql-operations'
   },
 })
 export default class FilmList extends Vue {
-  films = []
+  films: FilmListFragment[] = []
 }
 </script>

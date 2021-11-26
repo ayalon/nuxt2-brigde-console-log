@@ -1,22 +1,11 @@
 {
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
-    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "allowJs": true,
-    "sourceMap": true,
     "strict": true,
+    "sourceMap": true,
     "importHelpers": true,
-    "noEmit": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
-    },
     "types": ["@types/node", "@nuxt/types", "nuxt-graphql-middleware"]
   },
   "exclude": [
@@ -26,5 +15,8 @@
     "modules/simple",
     "modules/nuxt-graphql-middleware",
     "backup"
-  ]
+  ],
+  "vueCompilerOptions": {
+    "experimentalCompatMode": 2
+  }
 }

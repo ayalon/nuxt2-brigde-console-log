@@ -90,3 +90,4 @@ sw.*
 *.swp
 /modules/simple/
 /graphql_queries/
+modules/nuxt-graphql-middleware

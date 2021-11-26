@@ -25,3 +25,5 @@ export type AllFilmsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type AllFilmsQuery = { allFilms?: { __typename?: 'FilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined };
+
+export type FilmListFragment = { __typename?: 'Film', id: string, title?: string | null | undefined };

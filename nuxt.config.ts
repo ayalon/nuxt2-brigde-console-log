@@ -1,6 +1,6 @@
-import type { NuxtConfig } from '@nuxt/types'
+import { defineNuxtConfig } from '@nuxt/bridge'
 
-const config: NuxtConfig = {
+export default defineNuxtConfig({
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt2',
@@ -29,25 +29,29 @@ const config: NuxtConfig = {
   buildModules: [
     // PHPStorm support
     ['nuxt-storm', { nested: true }],
-    '@nuxt/typescript-build',
+    // '@nuxt/typescript-build',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // '~/modules/simple/js/module.js',
-    // '~/modules/simple/src/module.ts',
-    // '~/modules/nuxt-graphql-middleware/src/module.ts',
+    // '~/modules/simple',
     // '~/plugins/simple',
-    '~/modules/nuxt-graphql-middleware',
+    // '~/modules/nuxt-graphql-middleware',
+    'nuxt-graphql-middleware',
   ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  // build: {
-  //   transpile: ['vue-property-decorator'],
-  // },
+  build: {
+    transpile: ['vue-property-decorator'],
+  },
 
   bridge: {
-    vite: true,
+    vite: false,
   },
+
+  typescript: {
+    strict: true,
+  },
+
   graphqlMiddleware: {
     // Example: https://studio.apollographql.com/sandbox/explorer
     graphqlServer: `https://swapi-graphql.netlify.app/.netlify/functions/index`,
@@ -72,6 +76,4 @@ const config: NuxtConfig = {
       skipSchemaDownload: process.env.NODE_ENV === 'production',
     },
   },
-}
-
-export default config
+})
