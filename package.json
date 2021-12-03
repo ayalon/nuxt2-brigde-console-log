@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs",
+    "start": "node -r dotenv/config .output/server/index.mjs",
     "typecheck": "nuxi typecheck",
     "generate": "nuxi generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
@@ -15,8 +15,7 @@
     "nuxt-edge": "latest",
     "nuxt-graphql-middleware": "^2.0.4",
     "vue-class-component": "^7.2.6",
-    "vue-property-decorator": "^9.1.2",
-    "vue-tsc": "^0.29.6"
+    "vue-property-decorator": "^9.1.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
@@ -30,6 +29,7 @@
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-vue": "^7.19.1",
     "nuxt-storm": "^1.1.2",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.0",
+    "vue-tsc": "^0.29.6"
   }
 }

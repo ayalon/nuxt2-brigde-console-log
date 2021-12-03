@@ -91,3 +91,4 @@ sw.*
 /modules/simple/
 /graphql_queries/
 modules/nuxt-graphql-middleware
+.output
